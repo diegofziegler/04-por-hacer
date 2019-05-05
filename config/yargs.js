@@ -25,6 +25,15 @@ const argv = require('yargs')
         }
     }
 )
+.command('eliminar', 'borrar la tarea de la lista', 
+    {
+        descripcion: {
+            demand: true,
+            alias: 'd',
+            desc: 'descripción de la tarea'
+        }
+    }
+)
 .command('listar', 'muestra todas las tareas')
 .help()
 .argv;

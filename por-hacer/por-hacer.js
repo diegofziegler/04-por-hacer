@@ -63,10 +63,24 @@ const actualizar = (descripcion, completado=true) => {
 
 }
 
+const eliminar = (descripcion) => {
+    cargar();
 
+    let indice = listadoPorHacer.findIndex( tarea => {
+        return tarea.descripcion === descripcion;
+    });
+
+    if(indice >= 0) {
+        listadoPorHacer.splice(indice, 1);
+        guardarDB();
+    }
+
+    return (indice >= 0);
+
+}
 
 module.exports = {
 
-    crear, getListado, actualizar
+    crear, getListado, actualizar, eliminar
 
 }

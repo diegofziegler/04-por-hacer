@@ -36,6 +36,13 @@ switch( comando) {
         let b= porHacer.actualizar( argv.descripcion, argv.completado);
         console.log(`tarea actualizada: ${b}`);
         break;  
+
+    case 'eliminar':
+        //console.log(  `${comando} por hacer`);
+        let e= porHacer.eliminar( argv.descripcion);
+        console.log(`tarea eliminada: ${e}`);
+        break; 
+
     default:
         console.log(  `${comando}: comando no reconocido`); 
         return;
